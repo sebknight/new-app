@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<style>
+	.col-md {
+		min-height: 16em;
+		margin: 0.5em;
+		text-align: center;
+		font-size: 28px;
+		border-radius: 20px;
+	}
+	.blue {
+		background-color: blue;
+	}
+	.green {
+		background-color: green;
+	}
+	.yellow {
+		background-color: yellow
+	}
+	.red {
+		background-color: red;
+	}
+	.btn-group {
+		margin-left: 33vw;
+	}
+	.black{
+		background-color: black;
+		color: white;
+	}
+</style>
+<body>
+
+	<!-- Bootstrap html markup is seen here -->
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md box blue">Panel A</div>
+	    <div class="col-md box green">Panel B</div>
+	    <div class="w-100"></div>
+	    <div class="col-md box yellow">Panel C</div>
+	    <div class="col-md box red">Panel D</div>
+	  </div>
+		<div class="btn-group">
+			<button class="btn" id="one">One</button>
+			<button class="btn" id="two">Two</button>
+			<button class="btn" id="three">Three</button>
+			<button class="btn" id="four">Four</button>
+		</div>
+	</div>
+	<!-- Bootstrap Ends -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	//all jQuery in here - loads when doc is ready
+		$(document).ready(function() {
+			console.log("I'm loading the script now");
+			//jQuery click event
+			$("#one").click(function() {
+				//fadeOut allows a callback within the method
+	  		$(".blue").fadeOut(1000, function(){
+					//function body
+					// this is where we do and order stuff
+					//this is chaining:
+					alert("hello world");
+					$(".blue").fadeIn(3000);
+				});
+			//this is a callback function:
+			}); //btn one click ends
+
+			$("#two").click(function() {
+				$(".green").fadeOut(1000).fadeIn(2000, function(){
+					console.log("working");
+					//add class
+					$(".green").addClass("black");
+				});
+			}); //btn two click ends
+
+			$("#three").click(function() {
+				//toggle visibility
+				$(".yellow").toggle
+				console.log("a");
+			}); //btn three click ends
+
+			$("#four").click(function() {
+				$(".red").fadeOut(1000, function() {
+					//red fades in
+					console.log("b");
+					$(".red").fadeIn(3000);
+					//red changes to purple w/ white font
+					$(".red").css({"background-color":"purple", "color":"white"});
+				});
+			}); //btn four click ends
+
+		}); //document ready ends
+
+
+
+	</script>
+</body>
+</html>
